@@ -1,0 +1,15 @@
+@URL = http://localhost:3000
+
+### create song
+POST {{URL}}/songs
+Content-Type: application/json
+
+{
+    "title": "Hello Prisma 2"
+}
+
+### get all songs
+GET {{URL}}/songs
+
+### get song by id
+GET {{URL}}/songs/5
