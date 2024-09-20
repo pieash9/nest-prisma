@@ -7,16 +7,18 @@ import { Prisma } from '@prisma/client';
 export class SongsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(createSongDto: Prisma.SongCreateInput) {
+  create(createSongDto: Prisma.SongUncheckedCreateInput) {
     return this.prisma.song.create({
-      data: {
-        title: createSongDto.title,
-      },
+      data: createSongDto,
     });
   }
 
   findAll() {
-    return this.prisma.song.findMany();
+    return this.prisma.song.findMany({
+      include: {
+        artist: true,
+      },
+    });
   }
 
   findOne(id: number) {
@@ -28,9 +30,7 @@ export class SongsService {
   update(id: number, updateSongDto: Prisma.SongUpdateInput) {
     return this.prisma.song.update({
       where: { id },
-      data: {
-        title: updateSongDto.title,
-      },
+      data: updateSongDto,
     });
   }
 

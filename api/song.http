@@ -5,7 +5,8 @@ POST {{URL}}/songs
 Content-Type: application/json
 
 {
-    "title": "Hello Prisma 2"
+    "title": "Love it will like",
+    "artistId":1
 }
 
 ### get all songs

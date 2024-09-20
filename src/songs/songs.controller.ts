@@ -16,7 +16,7 @@ export class SongsController {
   constructor(private readonly songsService: SongsService) {}
 
   @Post()
-  create(@Body() createSongDto: Prisma.SongCreateInput) {
+  create(@Body() createSongDto: Prisma.SongUncheckedCreateInput) {
     return this.songsService.create(createSongDto);
   }
 

@@ -1,0 +1,9 @@
+@URL = http://localhost:3000
+
+### create song
+POST {{URL}}/artists
+Content-Type: application/json
+
+{
+    "name": "Ustad Nusrat Fateh Ali Khan"
+}
