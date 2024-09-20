@@ -1,0 +1,66 @@
+@URL = http://localhost:3000
+
+### create post
+POST {{URL}}/posts
+Content-Type: application/json
+
+{
+"title": "One to Many Relation",
+"categories": {
+"create": [
+{
+"assignedBy": "Jane",
+"asignedAt": "2023-08-01T10:03:38.016Z",
+"category": {
+"create": {
+"name": "Prisma"
+}
+}
+},
+{
+"assignedBy": "Jane",
+"asignedAt": "2023-08-01T10:03:38.016Z",
+"category": {
+"create": {
+"name": "Nest.js"
+}
+}
+}
+]
+}
+}
+
+
+### create post
+POST {{URL}}/posts
+Content-Type: application/json
+
+{
+"title": "Transactions in Prisma",
+"categories": {
+"create": [
+{
+"assignedBy": "Bob",
+"asignedAt": "2023-08-01T10:07:00.918Z",
+"category": {
+"connect": {
+"id": 1
+}
+}
+},
+{
+"assignedBy": "Bob",
+"asignedAt": "2023-08-01T10:07:00.918Z",
+"category": {
+"connect": {
+"id": 2
+}
+}
+}
+]
+}
+}
+
+
+### get all posts
+GET {{URL}}/posts

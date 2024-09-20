@@ -1,0 +1,14 @@
+@URL = http://localhost:3000
+
+### create user
+POST {{URL}}/users
+Content-Type: application/json
+
+{
+    "name": "Md. Pieash AHmed",
+    "photo":"Photo url",
+    "phone": " 01652477"
+}
+
+### get all users
+GET {{URL}}/users
