@@ -12,4 +12,15 @@ Content-Type: application/json
 GET {{URL}}/songs
 
 ### get song by id
-GET {{URL}}/songs/5
+GET {{URL}}/songs/3
+
+### Update song
+PATCH  {{URL}}/songs/3
+Content-Type: application/json
+
+{
+    "title": "Hello Prisma update"
+}
+
+### delete song by id
+DELETE {{URL}}/songs/2

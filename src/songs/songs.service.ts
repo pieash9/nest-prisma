@@ -25,11 +25,16 @@ export class SongsService {
     });
   }
 
-  update(id: number, updateSongDto: UpdateSongDto) {
-    return `This action updates a #${id} song`;
+  update(id: number, updateSongDto: Prisma.SongUpdateInput) {
+    return this.prisma.song.update({
+      where: { id },
+      data: {
+        title: updateSongDto.title,
+      },
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} song`;
+  remove(where: Prisma.SongWhereUniqueInput) {
+    return this.prisma.song.delete({ where });
   }
 }

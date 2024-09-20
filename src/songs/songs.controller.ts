@@ -31,12 +31,15 @@ export class SongsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSongDto: UpdateSongDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateSongDto: Prisma.SongUpdateInput,
+  ) {
     return this.songsService.update(+id, updateSongDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.songsService.remove(+id);
+  remove(@Param('id') id: Prisma.SongWhereUniqueInput) {
+    return this.songsService.remove({ id: +id });
   }
 }
