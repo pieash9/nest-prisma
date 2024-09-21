@@ -11,8 +11,10 @@ export class PostsService {
     return this.prisma.post.create({ data: createPostDto });
   }
 
-  findAll() {
-    return `This action returns all posts`;
+  findAll(where: Prisma.PostWhereUniqueInput) {
+    return this.prisma.post.findMany({
+      where,
+    });
   }
 
   findOne(id: number) {

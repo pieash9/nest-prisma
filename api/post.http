@@ -64,3 +64,20 @@ Content-Type: application/json
 
 ### get all posts
 GET {{URL}}/posts
+
+### FETCH ALL THE POSTS WITH NEST.JS CATEGORY
+GET http://localhost:3000/posts
+Content-Type: application/json
+
+{
+"categories": {
+"some": {
+"category": {
+"name": "Nest.js"
+}
+}
+}
+}
+
+### get all with transactions
+GET {{URL}}/sequential

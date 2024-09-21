@@ -6,9 +6,10 @@ import { ArtistsModule } from './artists/artists.module';
 import { PrismaModule } from './prisma.module';
 import { UsersModule } from './users/users.module';
 import { PostsModule } from './posts/posts.module';
+import { ApplicationsModule } from './applications/applications.module';
 
 @Module({
-  imports: [PrismaModule, SongsModule, ArtistsModule, UsersModule, PostsModule],
+  imports: [PrismaModule, SongsModule, ArtistsModule, UsersModule, PostsModule, ApplicationsModule],
   controllers: [AppController],
   providers: [AppService],
 })

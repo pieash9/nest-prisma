@@ -22,8 +22,11 @@ export class PostsController {
   }
 
   @Get()
-  findAll() {
-    return this.postsService.findAll();
+  findAll(
+    @Body()
+    where: Prisma.PostWhereUniqueInput,
+  ) {
+    return this.postsService.findAll(where);
   }
 
   @Get(':id')
