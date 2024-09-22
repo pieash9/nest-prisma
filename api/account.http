@@ -1,0 +1,36 @@
+### Create Account
+POST http://localhost:3000/accounts
+Content-Type: application/json
+
+{
+"title" : "Sam",
+"balance" : 100
+}
+
+### Trasnfer Amount
+POST http://localhost:3000/accounts/transfer
+Content-Type: application/json
+
+{
+"sender" :1,
+"receiver" :2,
+"amount": 50
+}
+### Trasnfer Amount
+POST http://localhost:3000/accounts/transfer
+Content-Type: application/json
+
+{
+"sender" :1,
+"receiver" :2,
+"amount": 40
+}
+### Trasnfer Amount
+POST http://localhost:3000/accounts/transfer
+Content-Type: application/json
+
+{
+"sender" :1,
+"receiver" :2,
+"amount": 20
+}
